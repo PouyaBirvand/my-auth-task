@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/context/AuthContext';
+import { Loading } from '@/components/ui/Loading/Loading';
 
 export default function HomePage() {
   const { user } = useAuthContext();
@@ -17,15 +18,6 @@ export default function HomePage() {
   }, [user, router]);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <div>در حال بارگذاری...</div>
-    </div>
+    <Loading/>
   );
 }
