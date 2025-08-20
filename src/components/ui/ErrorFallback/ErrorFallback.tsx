@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import styles from "./ErrorFallback.module.scss";
+import { Button } from "../Button/Button";
 
 interface Props {
   error: Error;
@@ -18,9 +19,9 @@ export default function ErrorFallback({ error, reset }: Props) {
       <div className={styles.card}>
         <h2 className={styles.title}>مشکلی پیش آمده!</h2>
         <p className={styles.message}>{error.message || "خطای ناشناخته رخ داد."}</p>
-        <button className={styles.retryButton} onClick={reset}>
+        <Button className={styles.retryButton} onClick={reset}>
           تلاش مجدد
-        </button>
+        </Button>
       </div>
     </div>
   );
