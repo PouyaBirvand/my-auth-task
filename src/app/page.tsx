@@ -10,6 +10,7 @@ export default function HomePage() {
   const router = useRouter();
 
   useEffect(() => {
+    if (user === undefined) return;
     if (user) {
       router.replace('/dashboard');
     } else {
@@ -17,7 +18,5 @@ export default function HomePage() {
     }
   }, [user, router]);
 
-  return (
-    <Loading/>
-  );
+  return <Loading text="در حال بررسی وضعیت کاربر..." />;
 }
